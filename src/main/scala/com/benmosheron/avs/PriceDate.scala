@@ -1,4 +1,4 @@
-package avs
+package com.benmosheron.avs
 
 import java.util.Date
 

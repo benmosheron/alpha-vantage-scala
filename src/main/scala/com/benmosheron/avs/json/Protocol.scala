@@ -1,6 +1,6 @@
-package avs.json
+package com.benmosheron.avs.json
 
-import avs.Price
+import com.benmosheron.avs.Price
 import spray.json._
 
 object Protocol extends DefaultJsonProtocol {

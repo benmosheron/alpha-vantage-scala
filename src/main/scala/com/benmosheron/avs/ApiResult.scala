@@ -1,4 +1,4 @@
-package avs
+package com.benmosheron.avs
 
 /**
   * Wraps a result from the alpha vantage API.

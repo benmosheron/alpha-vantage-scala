@@ -1,6 +1,8 @@
 name := "alpha-vantage-scala"
 
-version := "0.0.1"
+organization := "com.benmosheron"
+
+version := "0.0.2"
 
 scalaVersion := "2.12.4"
 
@@ -16,3 +18,6 @@ libraryDependencies += "com.typesafe.scala-logging" %% "scala-logging" % "3.8.0"
 // Dependency for the test app - will be removed.
 // https://mvnrepository.com/artifact/com.github.pathikrit/better-files
 libraryDependencies += "com.github.pathikrit" %% "better-files" % "3.4.0"
+
+// Add a publish task, to add to the local maven repository
+publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))

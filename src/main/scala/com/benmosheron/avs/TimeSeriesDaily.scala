@@ -1,4 +1,4 @@
-package avs
+package com.benmosheron.avs
 
 /**
   * Represents the daily time series of market prices.
@@ -9,7 +9,7 @@ class TimeSeriesDaily(val metadata: Map[String, String], val prices: Vector[Pric
 
 object TimeSeriesDaily {
   def parse(json: String): TimeSeriesDaily = {
-    import avs.json.Protocol.PriceFormat
+    import com.benmosheron.avs.json.Protocol.PriceFormat
     import spray.json._
     import spray.json.DefaultJsonProtocol._
     // We have a raw JSON string from alpha vantage.

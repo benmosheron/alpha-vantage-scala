@@ -1,3 +1,5 @@
+package com.benmosheron
+
 import avs.Api
 import better.files.File
 
@@ -10,10 +12,17 @@ object App {
     val api = new Api(key)
     // Optionally pass in a symbol
     val symbol = if(args.nonEmpty) args(0) else "MSFT"
-    val test = api.timeSeriesDaily(symbol)
+    val result = api.timeSeriesDaily(symbol)
+
+    result.timeSeries.get.prices.map(p => p.price.open).foreach(println)
+
+    result.timeSeries match {
+      case None => println("It didn't work! Check input parameters, or rawJson")
+      case Some(ts) => ts.prices.map(p => p.price.open).foreach(println)
+    }
 
     // Do some stuff
-//    println(test.timeSeries.get.metadata)
-//    println(test.rawJson)
+//    println(result.timeSeries.get.metadata)
+//    println(result.rawJson)
   }
 }

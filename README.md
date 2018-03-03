@@ -31,4 +31,11 @@ result.timeSeries match {
 }
 ```
 
+#### Installing
+
+Install into your local ivy2 cache by running `sbt publishLocal`, the API can then be referenced with:
+```
+libraryDependencies += "com.benmosheron" %% "alpha-vantage-scala" % "0.0.1"
+```
+
 Neither I, nor this project, are associated with Alpha Vantage.
