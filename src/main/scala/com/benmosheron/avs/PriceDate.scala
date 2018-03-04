@@ -1,5 +1,5 @@
 package com.benmosheron.avs
 
-import java.util.Date
+import java.time.LocalDate
 
-case class PriceDate(date: Date, price: Price)
+case class PriceDate(date: LocalDate, price: Price)

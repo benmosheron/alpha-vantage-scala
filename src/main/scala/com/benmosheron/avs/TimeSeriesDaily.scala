@@ -1,7 +1,10 @@
 package com.benmosheron.avs
 
+import java.time.LocalDate
+
 /**
   * Represents the daily time series of market prices.
+ *
   * @param metadata Metadata parsed from the JSON response.
   * @param prices Time series of daily prices, parsed from the JSON response.
   */
@@ -24,9 +27,9 @@ object TimeSeriesDaily {
     // Value: json object with open, close, etc. The numbers are all JSON strings.
     // We need a fancy formatter for the value
     val timeSeries = ts.fields.map {
-      case (d: String, p: JsValue) => PriceDate(Api.dateFormat.parse(d), p.convertTo[Price])
+      case (d: String, p: JsValue) => PriceDate(LocalDate.parse(d), p.convertTo[Price])
       case _ => throw new ResultMappingException("Could not map the HTTP result to a time series.")
-    }.toVector.sortWith((p1, p2) => p1.date.before(p2.date))
+    }.toVector.sortWith((p1, p2) => p1.date.isBefore(p2.date))
 
     new TimeSeriesDaily(metadata, timeSeries)
   }

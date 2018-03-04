@@ -40,6 +40,3 @@ class Api(key: String, outputSize: String = "full", logger: Logger = Logger("alp
     new ApiResult[TimeSeriesDaily](ts, rawJsonMaybe)
   }
 }
-object Api {
-  val dateFormat = new SimpleDateFormat("yyyy-MM-dd")
-}

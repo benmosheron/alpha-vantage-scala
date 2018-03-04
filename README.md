@@ -1,14 +1,12 @@
 # alpha-vantage-scala
 ### A Basic Wrapper around the Alpha Vantage Data API
 
-Version 0.0.1
-
 AVS supports the daily time series data API.
 
 To create an API instance you will need to pass in API key.
 Optional constructor arguments are:
 * outputSize: Either "full" (default) or "compact". This parameter will be passed to the API as the `outputsize` query string parameter.
-* logger: A scalalogging logger.  By default a new scalalogging logger will be instantiated.
+* logger: A scala-logging logger.  By default a new scala-logging logger will be instantiated.
 
 ```
 import avs.Api
@@ -35,7 +33,7 @@ result.timeSeries match {
 
 Install into your local ivy2 cache by running `sbt publishLocal`, the API can then be referenced with:
 ```
-libraryDependencies += "com.benmosheron" %% "alpha-vantage-scala" % "0.0.1"
+libraryDependencies += "com.benmosheron" %% "alpha-vantage-scala" % "<version>"
 ```
 
 Neither I, nor this project, are associated with Alpha Vantage.
